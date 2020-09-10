@@ -18,7 +18,7 @@ const scrollViewWidth = 6*smallCardSize+3*bigCardSize+9*8+vm(12);               
 
 // ----- animate Config -----
 const animateDuration = 5000;                                                                                       //单轮动画执行时间
-let gap = animateDuration/2;                                                                                        //上下动画间隔时间
+const gap = animateDuration/2;                                                                                      //上下动画间隔时间
 const maxZoomSize = (e)=>{return 1.2*e}                                                                             //卡片放大尺寸
 const minZoomSize = (e)=>{return 0.9*e}                                                                             //卡片缩小尺寸
 const cardZoomTime = 1000;                                                                                          //卡片缩放时间
@@ -64,29 +64,40 @@ export default function AnimatedCarousel(props) {
 
 
     // ----- Effect -----
-    // 上排卡片副作用
-    // useEffect(() => {
-    //     let timer1 = setTimeout(() => {
-    //         setTopCradsList(rebulidList(topCradsList,topLineCreatePos))
-    //         !!timer1 && clearTimeout(timer1);
-    //     }, animateDuration);
-    //     return ()=>{
-    //         topCardsAnimate();
-    //     }
-    // }, [topCradsList])
+    // custom hook: useInterval
+    function useInterval(callback, delay) {
+        const savedCallback = useRef();
 
-    // 下排卡片副作用
-    useEffect(() => {
-        let timer2 = setTimeout(() => {
-            setBottomCradsList(rebulidList(bottomCradsList,bottomLineCreatePos));
-            !!timer2 && clearTimeout(timer2);
-        }, animateDuration+gap);
-        return ()=>{
+        useEffect(() => {
+            savedCallback.current = callback;
+        });
+
+        useEffect(() => {
+            function tick() {
+                savedCallback.current();
+            }
+            if (delay !== null) {
+                let id = setInterval(tick, delay);
+                return () => clearInterval(id);
+            }
+        }, [delay]);
+    }
+
+    // 循环动画
+    useInterval(()=>{
+        topCardsAnimate();
+        setTimeout(() => {
             bottomCardsAnimate();
-            if(!!gap) gap = 0;
-        }
-    }, [bottomCradsList])
+        }, gap);
+    },animateDuration)
 
+    // 首轮动画
+    useEffect(() => {
+        topCardsAnimate();
+        setTimeout(() => {
+            bottomCardsAnimate();
+        }, gap);
+    }, [])
 
     // ----- Functions -----
     // 列表数据重构
@@ -317,7 +328,7 @@ export default function AnimatedCarousel(props) {
                 // 执行动画卡片
                 lineCrads.push(
                     <Animated.View key={i} style={[{marginLeft:i==0 ? 0 : 8,backgroundColor:'#0ff',position:'relative',overflow:'hidden',borderRadius:25,width:_initSize,height:_initSize,marginBottom:_marginBottom,marginTop:_marginTop}]}>
-                        {/* <Image style={[styles.bgImg,{}]} source={{uri:'https://dimg02.c-ctrip.com/images/100q11000000qsj8y3D34_C_160_160.jpg'}} /> */}
+                        <Image style={[styles.bgImg,{}]} source={{uri:'https://dimg02.c-ctrip.com/images/100q11000000qsj8y3D34_C_160_160.jpg'}} />
                         <View style={styles.contentBox}>
                             <Animated.Text style={[styles.topText,{fontSize:_lineOneFontSize}]}>哈尔滨</Animated.Text>
                             <Animated.Text style={[styles.bottomText,{fontSize:_lineTwoFontSize}]}>根据订单推荐</Animated.Text>
@@ -328,7 +339,7 @@ export default function AnimatedCarousel(props) {
                 // 无需动画卡片
                 lineCrads.push(
                     <View key={i} style={[{marginLeft:i==0 ? 0 : 8,backgroundColor:'#0ff',borderRadius:25,position:'relative',overflow:'hidden'},_isBig ? styles.bigCard : styles.smallCard]}>
-                        {/* <Image style={[styles.bgImg,{}]} source={{uri:'https://dimg02.c-ctrip.com/images/100q11000000qsj8y3D34_C_160_160.jpg'}} /> */}
+                        <Image style={[styles.bgImg,{}]} source={{uri:'https://dimg02.c-ctrip.com/images/100q11000000qsj8y3D34_C_160_160.jpg'}} />
                         <View style={styles.contentBox}>
                             <Text style={[styles.topText,{fontSize:_isBig ? bigCardLineOneFontSize : smallCardLineOneFontSize}]}>上海</Text>
                             <Text style={[styles.bottomText,{fontSize:_isBig ? bigCardLineTwoFontSize : smallCardLineTwoFontSize}]}>根据订单推荐</Text>
