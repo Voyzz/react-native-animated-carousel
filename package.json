@@ -1,0 +1,19 @@
+{
+  "name": "react-native-animated-carousel",
+  "version": "1.0.0",
+  "description": "A wonderful animated carsouel hooks component for React-Native",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Voyzz/react-native-animated-carousel.git"
+  },
+  "author": "voyzz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Voyzz/react-native-animated-carousel/issues"
+  },
+  "homepage": "https://github.com/Voyzz/react-native-animated-carousel#readme"
+}
