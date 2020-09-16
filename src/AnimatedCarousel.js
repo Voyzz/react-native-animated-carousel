@@ -19,6 +19,7 @@ const scrollViewWidth = 6*smallCardSize+3*bigCardSize+9*8+vm(12);               
 // ----- animate Config -----
 const animateDuration = 5000;                                                                                       //单轮动画执行时间
 const gap = animateDuration/2;                                                                                      //上下动画间隔时间
+const preStartTime = 1500;                                                                                          //执行动画前时间
 const maxZoomSize = (e)=>{return 1.2*e}                                                                             //卡片放大尺寸
 const minZoomSize = (e)=>{return 0.9*e}                                                                             //卡片缩小尺寸
 const cardZoomTime = 1000;                                                                                          //卡片缩放时间
@@ -85,18 +86,26 @@ export default function AnimatedCarousel(props) {
 
     // 循环动画
     useInterval(()=>{
-        topCardsAnimate();
         setTimeout(() => {
+            setTopCradsList(rebulidList(topCradsList,topLineCreatePos));
+            topCardsAnimate();
+        }, preStartTime);
+        setTimeout(() => {
+            setBottomCradsList(rebulidList(bottomCradsList,bottomLineCreatePos));
             bottomCardsAnimate();
-        }, gap);
+        }, gap+preStartTime);
     },animateDuration)
 
     // 首轮动画
     useEffect(() => {
-        topCardsAnimate();
         setTimeout(() => {
+            setTopCradsList(rebulidList(topCradsList,topLineCreatePos));
+            topCardsAnimate();
+        }, preStartTime);
+        setTimeout(() => {
+            setBottomCradsList(rebulidList(bottomCradsList,bottomLineCreatePos));
             bottomCardsAnimate();
-        }, gap);
+        }, gap+preStartTime);
     }, [])
 
     // ----- Functions -----
@@ -149,7 +158,6 @@ export default function AnimatedCarousel(props) {
             // 容器左间距
             Animated.sequence([
                 Animated.timing(topBoxMarginSize,{ toValue: maxZoomSize(smallCardSize*0.5)/2*-1,duration: lineMoveLeftAnimateGap[0],useNativeDriver:_useNativeDriver }),
-                // Animated.timing(topBoxMarginSize,{ toValue: minZoomSize(smallCardSize*0.5)/2*-1,duration: lineMoveLeftAnimateGap[1] }),
                 Animated.timing(topBoxMarginSize,{ toValue: 0,duration: lineMoveLeftAnimateGap[2],useNativeDriver:_useNativeDriver })
             ]),
 
@@ -225,7 +233,6 @@ export default function AnimatedCarousel(props) {
             // 容器左间距
             Animated.sequence([
                 Animated.timing(bottomBoxMarginSize,{ toValue: maxZoomSize(bigCardSize*0.5)/2*-1,duration: lineMoveLeftAnimateGap[0],useNativeDriver:_useNativeDriver }),
-                // Animated.timing(bottomBoxMarginSize,{ toValue: minZoomSize(bigCardSize*0.5)/2*-1,duration: lineMoveLeftAnimateGap[1] }),
                 Animated.timing(bottomBoxMarginSize,{ toValue: 0,duration: lineMoveLeftAnimateGap[2],useNativeDriver:_useNativeDriver })
             ]),
 
@@ -328,9 +335,9 @@ export default function AnimatedCarousel(props) {
                 // 执行动画卡片
                 lineCrads.push(
                     <Animated.View key={i} style={[{marginLeft:i==0 ? 0 : 8,backgroundColor:'#0ff',position:'relative',overflow:'hidden',borderRadius:25,width:_initSize,height:_initSize,marginBottom:_marginBottom,marginTop:_marginTop}]}>
-                        <Image style={[styles.bgImg,{}]} source={{uri:'https://dimg02.c-ctrip.com/images/100q11000000qsj8y3D34_C_160_160.jpg'}} />
+                        {/* <Image style={[styles.bgImg,{}]} source={{uri:'https://dimg02.c-ctrip.com/images/100q11000000qsj8y3D34_C_160_160.jpg'}} /> */}
                         <View style={styles.contentBox}>
-                            <Animated.Text style={[styles.topText,{fontSize:_lineOneFontSize}]}>哈尔滨</Animated.Text>
+                            <Animated.Text style={[styles.topText,{fontSize:_lineOneFontSize}]}>哈尔滨{e}</Animated.Text>
                             <Animated.Text style={[styles.bottomText,{fontSize:_lineTwoFontSize}]}>根据订单推荐</Animated.Text>
                         </View>
                     </Animated.View>
@@ -339,9 +346,9 @@ export default function AnimatedCarousel(props) {
                 // 无需动画卡片
                 lineCrads.push(
                     <View key={i} style={[{marginLeft:i==0 ? 0 : 8,backgroundColor:'#0ff',borderRadius:25,position:'relative',overflow:'hidden'},_isBig ? styles.bigCard : styles.smallCard]}>
-                        <Image style={[styles.bgImg,{}]} source={{uri:'https://dimg02.c-ctrip.com/images/100q11000000qsj8y3D34_C_160_160.jpg'}} />
+                        {/* <Image style={[styles.bgImg,{}]} source={{uri:'https://dimg02.c-ctrip.com/images/100q11000000qsj8y3D34_C_160_160.jpg'}} /> */}
                         <View style={styles.contentBox}>
-                            <Text style={[styles.topText,{fontSize:_isBig ? bigCardLineOneFontSize : smallCardLineOneFontSize}]}>上海</Text>
+                            <Text style={[styles.topText,{fontSize:_isBig ? bigCardLineOneFontSize : smallCardLineOneFontSize}]}>上海{e}</Text>
                             <Text style={[styles.bottomText,{fontSize:_isBig ? bigCardLineTwoFontSize : smallCardLineTwoFontSize}]}>根据订单推荐</Text>
                         </View>
                     </View>
