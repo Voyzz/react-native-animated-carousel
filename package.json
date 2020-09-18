@@ -1,6 +1,6 @@
 {
   "name": "react-native-animated-carousel",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A wonderful animated carsouel hooks component for React-Native",
   "main": "index.js",
   "scripts": {
