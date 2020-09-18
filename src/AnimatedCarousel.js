@@ -14,7 +14,7 @@ const bigCardLineOneFontSize = vm(20);                                          
 const bigCardLineTwoFontSize = vm(12);                                                                              //大卡片第二行字体大小
 const smallCardLineOneFontSize = vm(15);                                                                            //小卡片第一行字体大小
 const smallCardLineTwoFontSize = vm(10);                                                                            //小卡片第二行字体大小
-const scrollViewWidth = 6*smallCardSize+3*bigCardSize+9*8+vm(12);                                                   //scrollView宽度
+const scrollViewWidth = 4*smallCardSize+2*bigCardSize+6*8+vm(12);                                                   //scrollView宽度
 
 // ----- animate Config -----
 const animateDuration = 5000;                                                                                       //单轮动画执行时间
@@ -28,9 +28,13 @@ const lineMoveLeftAnimateGap = [500,250,500]                                    
 
 
 export default function AnimatedCarousel(props) {
+    const { cardList } = props;
+    const _mid = cardList.length >> 1;
     // ----- Data -----
-    let _topCardList = [1,2,3,4,5,6,7,8,9];
-    let _bottomCardList = [1,2,3,4,5,6,7,8,9];
+    // let _topCardList = [1,2,3,4,5,6,7,8,9];
+    // let _bottomCardList = [1,2,3,4,5,6,7,8,9];
+    const  _topCardList = cardList.slice(0,_mid);
+    const  _bottomCardList = cardList.slice(_mid);
     let topRebulidList = _topCardList.concat([_topCardList[topLineCreatePos]]);
     let bottomRebulidList = _bottomCardList.concat([_bottomCardList[bottomLineCreatePos]]);
 
@@ -334,22 +338,22 @@ export default function AnimatedCarousel(props) {
 
                 // 执行动画卡片
                 lineCrads.push(
-                    <Animated.View key={i} style={[{marginLeft:i==0 ? 0 : 8,backgroundColor:'#0ff',position:'relative',overflow:'hidden',borderRadius:25,width:_initSize,height:_initSize,marginBottom:_marginBottom,marginTop:_marginTop}]}>
-                        {/* <Image style={[styles.bgImg,{}]} source={{uri:'https://dimg02.c-ctrip.com/images/100q11000000qsj8y3D34_C_160_160.jpg'}} /> */}
+                    <Animated.View key={i} style={[{marginLeft:i==0 ? 0 : 8,position:'relative',overflow:'hidden',borderRadius:25,width:_initSize,height:_initSize,marginBottom:_marginBottom,marginTop:_marginTop}]}>
+                        <Image style={[styles.bgImg,{}]} source={{uri:e.bgImage}} />
                         <View style={styles.contentBox}>
-                            <Animated.Text style={[styles.topText,{fontSize:_lineOneFontSize}]}>哈尔滨{e}</Animated.Text>
-                            <Animated.Text style={[styles.bottomText,{fontSize:_lineTwoFontSize}]}>根据订单推荐</Animated.Text>
+                            <Animated.Text style={[styles.topText,{fontSize:_lineOneFontSize}]}>{e.title}</Animated.Text>
+                            <Animated.Text style={[styles.bottomText,{fontSize:_lineTwoFontSize}]}>{e.subTitle}</Animated.Text>
                         </View>
                     </Animated.View>
                 )
             }else{
                 // 无需动画卡片
                 lineCrads.push(
-                    <View key={i} style={[{marginLeft:i==0 ? 0 : 8,backgroundColor:'#0ff',borderRadius:25,position:'relative',overflow:'hidden'},_isBig ? styles.bigCard : styles.smallCard]}>
-                        {/* <Image style={[styles.bgImg,{}]} source={{uri:'https://dimg02.c-ctrip.com/images/100q11000000qsj8y3D34_C_160_160.jpg'}} /> */}
+                    <View key={i} style={[{marginLeft:i==0 ? 0 : 8,borderRadius:25,position:'relative',overflow:'hidden'},_isBig ? styles.bigCard : styles.smallCard]}>
+                        <Image style={[styles.bgImg,{}]} source={{uri:e.bgImage}} />
                         <View style={styles.contentBox}>
-                            <Text style={[styles.topText,{fontSize:_isBig ? bigCardLineOneFontSize : smallCardLineOneFontSize}]}>上海{e}</Text>
-                            <Text style={[styles.bottomText,{fontSize:_isBig ? bigCardLineTwoFontSize : smallCardLineTwoFontSize}]}>根据订单推荐</Text>
+                            <Text style={[styles.topText,{fontSize:_isBig ? bigCardLineOneFontSize : smallCardLineOneFontSize}]}>{e.title}</Text>
+                            <Text style={[styles.bottomText,{fontSize:_isBig ? bigCardLineTwoFontSize : smallCardLineTwoFontSize}]}>{e.subTitle}</Text>
                         </View>
                     </View>
                 )
