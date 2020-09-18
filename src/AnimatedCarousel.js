@@ -1,5 +1,5 @@
 import React, { useState, useEffect,useRef } from 'react';
-import { StyleSheet,View,Text,Image,TouchableOpacity,Animated,ScrollView,Dimensions } from 'react-native';
+import { StyleSheet,View,Text,Image,TouchableOpacity,Animated,ScrollView,Dimensions,Linking } from 'react-native';
 
 
 // ----- static Config -----
@@ -31,8 +31,6 @@ export default function AnimatedCarousel(props) {
     const { cardList } = props;
     const _mid = cardList.length >> 1;
     // ----- Data -----
-    // let _topCardList = [1,2,3,4,5,6,7,8,9];
-    // let _bottomCardList = [1,2,3,4,5,6,7,8,9];
     const  _topCardList = cardList.slice(0,_mid);
     const  _bottomCardList = cardList.slice(_mid);
     let topRebulidList = _topCardList.concat([_topCardList[topLineCreatePos]]);
@@ -338,24 +336,28 @@ export default function AnimatedCarousel(props) {
 
                 // 执行动画卡片
                 lineCrads.push(
-                    <Animated.View key={i} style={[{marginLeft:i==0 ? 0 : 8,position:'relative',overflow:'hidden',borderRadius:25,width:_initSize,height:_initSize,marginBottom:_marginBottom,marginTop:_marginTop}]}>
-                        <Image style={[styles.bgImg,{}]} source={{uri:e.bgImage}} />
-                        <View style={styles.contentBox}>
-                            <Animated.Text style={[styles.topText,{fontSize:_lineOneFontSize}]}>{e.title}</Animated.Text>
-                            <Animated.Text style={[styles.bottomText,{fontSize:_lineTwoFontSize}]}>{e.subTitle}</Animated.Text>
-                        </View>
-                    </Animated.View>
+                    <TouchableOpacity onPress={()=>{!!e.jumpUrl && Linking.openURL(e.jumpUrl)}}>
+                        <Animated.View key={i} style={[{marginLeft:i==0 ? 0 : 8,position:'relative',overflow:'hidden',borderRadius:25,width:_initSize,height:_initSize,marginBottom:_marginBottom,marginTop:_marginTop}]}>
+                            <Image style={[styles.bgImg,{}]} source={{uri:e.bgImage}} />
+                            <View style={styles.contentBox}>
+                                <Animated.Text style={[styles.topText,{fontSize:_lineOneFontSize}]}>{e.title}</Animated.Text>
+                                <Animated.Text style={[styles.bottomText,{fontSize:_lineTwoFontSize}]}>{e.subTitle}</Animated.Text>
+                            </View>
+                        </Animated.View>
+                    </TouchableOpacity>
                 )
             }else{
                 // 无需动画卡片
                 lineCrads.push(
-                    <View key={i} style={[{marginLeft:i==0 ? 0 : 8,borderRadius:25,position:'relative',overflow:'hidden'},_isBig ? styles.bigCard : styles.smallCard]}>
-                        <Image style={[styles.bgImg,{}]} source={{uri:e.bgImage}} />
-                        <View style={styles.contentBox}>
-                            <Text style={[styles.topText,{fontSize:_isBig ? bigCardLineOneFontSize : smallCardLineOneFontSize}]}>{e.title}</Text>
-                            <Text style={[styles.bottomText,{fontSize:_isBig ? bigCardLineTwoFontSize : smallCardLineTwoFontSize}]}>{e.subTitle}</Text>
+                    <TouchableOpacity onPress={()=>{!!e.jumpUrl && Linking.openURL(e.jumpUrl)}}>
+                        <View key={i} style={[{marginLeft:i==0 ? 0 : 8,borderRadius:25,position:'relative',overflow:'hidden'},_isBig ? styles.bigCard : styles.smallCard]}>
+                            <Image style={[styles.bgImg,{}]} source={{uri:e.bgImage}} />
+                            <View style={styles.contentBox}>
+                                <Text style={[styles.topText,{fontSize:_isBig ? bigCardLineOneFontSize : smallCardLineOneFontSize}]}>{e.title}</Text>
+                                <Text style={[styles.bottomText,{fontSize:_isBig ? bigCardLineTwoFontSize : smallCardLineTwoFontSize}]}>{e.subTitle}</Text>
+                            </View>
                         </View>
-                    </View>
+                    </TouchableOpacity>
                 )
             }
         })
