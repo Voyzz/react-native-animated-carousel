@@ -25,12 +25,12 @@
 <span id='demo'><span>
 ## Demo 
 
-![demo](https://i.loli.net/2020/09/18/UuDfZM3gpwoIs6P.gif)
+<img align="center" src="https://i.loli.net/2020/09/18/UuDfZM3gpwoIs6P.gif" />
 
 ---
 
-## How to use
 <span id='howtouse'><span>
+## How to use
 
 - install   
 ```
@@ -69,8 +69,8 @@ const testData = [
 
 ---
 
-## Properties
 <span id='properties'><span>
+## Properties
 
 |Prop|Default|Options|Type|Description|
 |:---|:--:|:--:|:--:|:---|
