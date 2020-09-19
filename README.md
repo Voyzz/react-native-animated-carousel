@@ -1,24 +1,25 @@
-# react-native-animated-carousel
+# Hello, folks! <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px">
 
-## Catalog
-- [Description](#description)
-- [Demo](#demo)
-- [How to use](#use)
-- [Properties](#properties)
-
-## Description
-<span id='description'><span>
-> 🦄 A wonderful animated carsouel hooks component for React-Native 
+> 🦄 This is a wonderful animated carsouel hooks component for React-Native   
 > 
-> @version:1.0.2
->  
-> 为React Native开发的轮播展示动画组件  
-> 
->> Powered by Voyz Shen  
-> [Email](18217501371@163.com) /
+> ✨ 为React Native开发的轮播展示动画组件   
+>   
+> @version:1.0.2   
+>    
+---
+> Powered by Voyz Shen 
+>    
+> Shanghai Jiao Tong University, Ctrip  
+> You can find me on: [Email](18217501371@163.com) /
 > [Blog](http://blog.voyz.vip/) /
 > [Github](https://github.com/Voyzz) /
-> WeChat : voyz_shen1227  
+> WeChat(voyz_shen1227)
+
+
+## Catalog
+- [Demo](#demo)
+- [How to use](#howtouse)
+- [Properties](#properties)
 
 ---
 <span id='demo'><span>
@@ -29,7 +30,7 @@
 ---
 
 ## How to use
-<span id='use'><span>
+<span id='howtouse'><span>
 
 - install   
 ```
