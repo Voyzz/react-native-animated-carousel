@@ -4,7 +4,7 @@
 [![](https://img.shields.io/badge/Github--informational?style=social&logo=github)](https://github.com/Voyzz)
 [![](https://img.shields.io/badge/Gmail--informational?style=social&logo=gmail)](voyzshen@gmail.com)
 [![](https://img.shields.io/badge/Blog--informational?style=social&logo=micro.blog)](http://blog.voyz.vip/)
-[![](https://img.shields.io/badge/React Native--informational?style=social&logo=react)](https://reactnative.cn/)
+[![](https://img.shields.io/badge/ReactNative--informational?style=social&logo=react)](https://reactnative.cn/)
 
 ![](https://img.shields.io/npm/v/react-native-animated-carousel?style=for-the-badge)
 ![](https://img.shields.io/npm/dt/react-native-animated-carousel?style=for-the-badge)
