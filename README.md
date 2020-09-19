@@ -3,7 +3,7 @@
 ![](https://img.shields.io/badge/Wechat-voyz_shen1227-informational?style=social&logo=wechat)
 ![](https://img.shields.io/badge/Github-Voyzz-informational?style=social&logo=github)
 ![](https://img.shields.io/badge/Gmail-voyzshen-informational?style=social&logo=gmail)
-![](https://img.shields.io/badge/Blog--informational?style=social&logo=micro.blog&link=http://blog.voyz.vip/)
+[![](https://img.shields.io/badge/Blog--informational?style=social&logo=micro.blog)](http://blog.voyz.vip/)
 
 ![](https://img.shields.io/npm/v/react-native-animated-carousel)
 ![](https://img.shields.io/npm/dt/react-native-animated-carousel)
