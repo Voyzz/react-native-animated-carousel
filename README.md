@@ -1,4 +1,7 @@
+<div align=center><img align="center" src="https://i.loli.net/2020/09/19/LYfW67IyjgZoNKq.png" width="250px"/></div>
+
 # Hello, folks! <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px">
+
 
 > 🦄 This is a wonderful animated carsouel hooks component for React-Native   
 > 
@@ -6,7 +9,7 @@
 >   
 > @version:1.0.2   
 >    
----
+***
 > Powered by Voyz Shen 
 >    
 > Shanghai Jiao Tong University, Ctrip  
