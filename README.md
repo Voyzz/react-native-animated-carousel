@@ -1,6 +1,6 @@
 <div align=center><img align="center" src="https://i.loli.net/2020/09/19/LYfW67IyjgZoNKq.png" width="250px"/></div>
 
-<center>[![](https://img.shields.io/badge/Wechat--informational?style=social&logo=wechat)](https://i.loli.net/2020/09/19/cdUaruGyjzbMQA7.jpg)
+[![](https://img.shields.io/badge/Wechat--informational?style=social&logo=wechat)](https://i.loli.net/2020/09/19/cdUaruGyjzbMQA7.jpg)
 [![](https://img.shields.io/badge/Github--informational?style=social&logo=github)](https://github.com/Voyzz)
 [![](https://img.shields.io/badge/Gmail--informational?style=social&logo=gmail)](voyzshen@gmail.com)
 [![](https://img.shields.io/badge/Blog--informational?style=social&logo=micro.blog)](http://blog.voyz.vip/)
@@ -8,7 +8,7 @@
 ![](https://img.shields.io/npm/v/react-native-animated-carousel)
 ![](https://img.shields.io/npm/dt/react-native-animated-carousel)
 ![](https://img.shields.io/github/last-commit/Voyzz/react-native-animated-carousel)
-![](https://img.shields.io/npm/l/react-native-animated-carousel)</center>
+![](https://img.shields.io/npm/l/react-native-animated-carousel)
 
 
 # Hello, folks! <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px">
