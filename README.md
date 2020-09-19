@@ -1,7 +1,9 @@
 <div align=center><img align="center" src="https://i.loli.net/2020/09/19/LYfW67IyjgZoNKq.png" width="250px"/></div>
 
-![](https://img.shields.io/github/stars/Voyzz/react-native-animated-carousel?style=social)
-![](https://img.shields.io/badge/Wechat-voyz_shen1227-informational?style=social&logo=WeChat&logoColor=white&color=2bbc8a)
+![](https://img.shields.io/badge/Wechat-voyz_shen1227-informational?style=social&logo=wechat)
+![](https://img.shields.io/badge/Github-Voyzz-informational?style=social&logo=github)
+![](https://img.shields.io/badge/Gmail-voyzshen-informational?style=social&logo=gmail)
+![](https://img.shields.io/badge/Blog--informational?style=social&logo=micro.blog&link=http://blog.voyz.vip/)
 
 ![](https://img.shields.io/npm/v/react-native-animated-carousel)
 ![](https://img.shields.io/npm/dt/react-native-animated-carousel)
@@ -18,10 +20,7 @@
 >    
 > 👨🏻‍💻 Powered by Voyz Shen   
 >> 🏫 Shanghai Jiao Tong University, Ctrip  
->> 📮 You can find me on: [Email](18217501371@163.com) /
-> [Blog](http://blog.voyz.vip/) /
-> [Github](https://github.com/Voyzz) /
-> WeChat(voyz_shen1227)
+>> 📮 [My Email](18217501371@163.com)
 
 
 ## Catalog
