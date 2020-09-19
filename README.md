@@ -24,7 +24,7 @@
 ---
 <span id='demo'><span>
 ## Demo 
-<div align=center>![demo](https://i.loli.net/2020/09/18/UuDfZM3gpwoIs6P.gif)
+<div align=center><img align="center" src="https://i.loli.net/2020/09/18/UuDfZM3gpwoIs6P.gif" /></div>
 
 ---
 
