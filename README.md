@@ -80,7 +80,8 @@ const testData = [
 
 |Prop|Default|Options|Type|Description|
 |:---|:--:|:--:|:--:|:---|
-| cardList |/|/|Array|data of crads|
+| cardList |/|/|Array|data of cards|
+|||||卡片数据|
 
 ### item properties ↓
 |Prop|Default|Options|Type|Description|
