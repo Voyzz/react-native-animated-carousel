@@ -336,8 +336,8 @@ export default function AnimatedCarousel(props) {
 
                 // 执行动画卡片
                 lineCrads.push(
-                    <TouchableOpacity onPress={()=>{!!e.jumpUrl && Linking.openURL(e.jumpUrl)}}>
-                        <Animated.View key={i} style={[{marginLeft:i==0 ? 0 : 8,position:'relative',overflow:'hidden',borderRadius:25,width:_initSize,height:_initSize,marginBottom:_marginBottom,marginTop:_marginTop}]}>
+                    <TouchableOpacity onPress={()=>{!!e.jumpUrl && Linking.openURL(e.jumpUrl)}} key={i}>
+                        <Animated.View style={[{marginLeft:i==0 ? 0 : 8,position:'relative',overflow:'hidden',borderRadius:25,width:_initSize,height:_initSize,marginBottom:_marginBottom,marginTop:_marginTop}]}>
                             <Image style={[styles.bgImg,{}]} source={{uri:e.bgImage}} />
                             <View style={styles.contentBox}>
                                 <Animated.Text style={[styles.topText,{fontSize:_lineOneFontSize}]}>{e.title}</Animated.Text>
@@ -349,8 +349,8 @@ export default function AnimatedCarousel(props) {
             }else{
                 // 无需动画卡片
                 lineCrads.push(
-                    <TouchableOpacity onPress={()=>{!!e.jumpUrl && Linking.openURL(e.jumpUrl)}}>
-                        <View key={i} style={[{marginLeft:i==0 ? 0 : 8,borderRadius:25,position:'relative',overflow:'hidden'},_isBig ? styles.bigCard : styles.smallCard]}>
+                    <TouchableOpacity onPress={()=>{!!e.jumpUrl && Linking.openURL(e.jumpUrl)}} key={i}>
+                        <View style={[{marginLeft:i==0 ? 0 : 8,borderRadius:25,position:'relative',overflow:'hidden'},_isBig ? styles.bigCard : styles.smallCard]}>
                             <Image style={[styles.bgImg,{}]} source={{uri:e.bgImage}} />
                             <View style={styles.contentBox}>
                                 <Text style={[styles.topText,{fontSize:_isBig ? bigCardLineOneFontSize : smallCardLineOneFontSize}]}>{e.title}</Text>
@@ -432,6 +432,7 @@ const createStyles = ()=>{
             left:0,
             bottom:0,
             right:0,
+            backgroundColor:'#e3e3e3'
         },
         topText:{
             color:'#333333',
