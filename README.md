@@ -38,7 +38,7 @@
 <span id='howtouse'><span>
 ## How to use
 
-- install   
+- install    
 ```
 npm i react-native-animated-carousel --save
 ```
