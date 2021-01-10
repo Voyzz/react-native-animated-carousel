@@ -39,7 +39,7 @@
 ## How to use
 
 - install    
-```
+``` 
 npm i react-native-animated-carousel --save
 ```
 
