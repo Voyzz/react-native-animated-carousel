@@ -53,14 +53,14 @@ import AnimatedCarousel from 'react-native-animated-carousel'
 ```
 const testData = [
   {
-    title:'医疗',
+    title:'tilte1',
     subTitle:'副标题1',
     bgImage:'https://i.loli.net/2020/09/17/qxoJu8G3fe97lrc.png',
     jumpUrl:''
   },
   ...
   {
-    title:'生活',
+    title:'title2',
     subTitle:'副标题12',
     bgImage:'https://i.loli.net/2020/09/17/rgiPpKRafObAQvN.png',
     jumpUrl:''
