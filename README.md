@@ -6,7 +6,7 @@
 [![](https://img.shields.io/badge/我的Blog--informational?style=social&logo=micro.blog)](http://blog.voyz.vip/)
 [![](https://img.shields.io/badge/ReactNative--informational?style=social&logo=react)](https://reactnative.cn/) 
 
-![](https://img.shields.io/npm/v/react-native-animated-carousel?style=for-the-badge) 
+![](https://img.shields.io/npm/v/react-native-animated-carousel?style=for-the-badge)   
 ![](https://img.shields.io/npm/dt/react-native-animated-carousel?style=for-the-badge)   
 ![](https://img.shields.io/github/last-commit/Voyzz/react-native-animated-carousel?style=for-the-badge)
 ![](https://img.shields.io/npm/l/react-native-animated-carousel?style=for-the-badge) 
