@@ -15,7 +15,7 @@
 # Hello, folks! <img src="https://i.loli.net/2020/12/25/1uvAhEik2RgCPDp.gif" width="30px"> 
 
 
-> 🦄 This is a wonderful animated carsouel hooks component for React-Native    
+> 🦄 This is a wonderful animated carsouel hooks component for React-Native     
 >> ✨ 为React Native开发的轮播展示动画组件 
 >    
 > 👨🏻‍💻 Powered by Voyz Shen    
