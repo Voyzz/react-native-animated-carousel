@@ -19,7 +19,7 @@
 >> ✨ 为React Native开发的轮播展示动画组件 
 >    
 > 👨🏻‍💻 Powered by Voyz Shen    
->> 🏫 Shanghai Jiao Tong University, Ctrip
+>> 🏫 Shanghai Jiao Tong University, Ctrip 
 
 
 ## Catalog
