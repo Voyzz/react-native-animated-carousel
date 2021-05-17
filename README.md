@@ -12,7 +12,7 @@
 ![](https://img.shields.io/npm/l/react-native-animated-carousel?style=for-the-badge) 
 ![](https://img.shields.io/github/languages/top/Voyzz/react-native-animated-carousel?style=for-the-badge) 
 
-# Hello, folks! <img src="https://i.loli.net/2020/12/25/1uvAhEik2RgCPDp.gif" width="30px"> 
+# Hello, folks! <img src="https://i.loli.net/2020/12/25/1uvAhEik2RgCPDp.gif" width="30px">  
 
 
 > 🦄 This is a wonderful animated carsouel hooks component for React-Native     
