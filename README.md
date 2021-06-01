@@ -25,7 +25,7 @@
 ## Catalog
 > - [Demo](#demo)
 > - [How to use](#howtouse)
-> - [Properties](#properties)
+> - [Properties](#properties) 
 > - [Versions](#versions)
 
 ---
